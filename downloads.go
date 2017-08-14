@@ -47,6 +47,8 @@ func (d Download) HasBeenDownloadeAfter(t time.Time) bool {
 	return d.Downloaded_at.After(t) || d.Downloaded_at.Equal(t)
 }
 
+//Init initialize the set of downloads with 10000 items.
+//The moment of each download is within this year
 func (d *Downloads) Init() *Downloads {
 
 	r := rand.New(rand.NewSource(time.Now().UnixNano()))
@@ -75,6 +77,7 @@ func (d Downloads) Filter(f func(Download) bool) []Download {
 	return vsf
 }
 
+//return a random Time within this Year (from now back)
 func randate(r *rand.Rand) time.Time {
 
 	var now = time.Now()

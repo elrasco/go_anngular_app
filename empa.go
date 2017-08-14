@@ -17,6 +17,7 @@ func main() {
 	router.Run()
 }
 
+//findInArange is the handler of /api/v1/find route.
 func findInArange(c *gin.Context) {
 	d := downloads.Find(c.Query("from"), c.Query("to"))
 	c.JSON(http.StatusCreated, gin.H{"status": http.StatusOK, "message": "OK", "downloads": d})
