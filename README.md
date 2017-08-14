@@ -13,9 +13,10 @@ This README would normally document whatever steps are necessary to get your app
 * Summary of set up
 * Configuration
 * Dependencies
-* Database configuration
 * How to run tests
 * Deployment instructions
+docker build -t empahomework .
+docker run -d -p <yourport>:8080
 
 ### Contribution guidelines ###
 
