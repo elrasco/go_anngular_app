@@ -27,7 +27,7 @@ func (d Downloads) Find(start string, end string) []Download {
 	}
 
 	if errEnd != nil {
-		endAsTime = time.Now().AddDate(0, 0, 7)
+		endAsTime = time.Now()
 	}
 
 	return d.Filter(func(item Download) bool {
@@ -76,11 +76,10 @@ func (d Downloads) Filter(f func(Download) bool) []Download {
 }
 
 func randate(r *rand.Rand) time.Time {
-	min := time.Date(2017, 1, 0, 0, 0, 0, 0, time.UTC).Unix()
 
 	var now = time.Now()
-
-	max := time.Date(now.Year(), now.Month(), now.Day(), 0, 0, 0, 0, time.UTC).Unix()
+	min := now.AddDate(0, 0, -365).Unix()
+	max := now.Unix()
 	delta := max - min
 
 	sec := r.Int63n(delta) + min
