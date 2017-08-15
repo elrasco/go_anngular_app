@@ -16,7 +16,9 @@ module.exports = {
     'expect': true,
     'sinon': true,
     'inject': true,
-    'angular': true
+    'angular': true,
+    'NgMap': true,
+    'google': true
   },
   "rules": {
     "indent": [

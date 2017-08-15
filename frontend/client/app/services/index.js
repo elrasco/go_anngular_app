@@ -1,7 +1,8 @@
 import angular from 'angular';
 
-const names = [
-];
+import downloads from './downloads';
+
+const names = [downloads];
 const servicesModule = angular
   .module('app.services', names)
   .name;

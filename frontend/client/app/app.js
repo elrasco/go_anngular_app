@@ -8,6 +8,7 @@ import ngAria from 'angular-aria';
 import ngMaterial from 'angular-material';
 import uiRouter from 'angular-ui-router';
 import ngSanitize from 'angular-sanitize';
+import ngMap from 'ngmap';
 
 import Services from './services';
 import Views from './views';
@@ -22,6 +23,7 @@ angular
     ngAria,
     ngMaterial,
     ngSanitize,
+    ngMap,
     Views,
     Services,
     Components,

@@ -2,18 +2,29 @@ package main
 
 import (
 	"net/http"
+	"time"
 
 	"github.com/gin-gonic/gin"
+	cors "github.com/itsjamie/gin-cors"
 )
 
 var downloads = Downloads{}
 
 func main() {
 	downloads.Init()
-	router := gin.Default()
-	v1 := router.Group("/api/v1/find")
+	router := gin.New()
 
-	v1.GET("/", findInArange)
+	router.Use(cors.Middleware(cors.Config{
+		Origins:         "*",
+		Methods:         "GET",
+		RequestHeaders:  "Origin, Authorization, Content-Type, Access-Control-Allow-Origin, Access-Control-Allow-Credentials",
+		ExposedHeaders:  "",
+		MaxAge:          50 * time.Second,
+		Credentials:     true,
+		ValidateHeaders: false,
+	}))
+
+	router.GET("/api/downloads", findInArange)
 	router.Run()
 }
 

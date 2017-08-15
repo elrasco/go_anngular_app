@@ -11,7 +11,9 @@ const downloadsModule = angular.module('downloads.view', [uiRouter])
       .state('downloads', {
         url: '/downloads',
         component: 'downloads',
-        resolve: {}
+        resolve: {
+          markers: downloads => downloads.get()
+        }
       });
   })
   .component('downloads', downloadsComponent)

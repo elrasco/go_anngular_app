@@ -4,6 +4,7 @@ import './downloads.scss';
 
 const campaignsComponent = {
   bindings: {
+    markers: '<'
   },
   template,
   controller
