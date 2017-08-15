@@ -4,9 +4,8 @@ This README would normally document whatever steps are necessary to get your app
 
 ### What is this repository for? ###
 
-* Quick summary
-* Version
-* [Learn Markdown](https://bitbucket.org/tutorials/markdowndemo)
+This repository contains both backend and frontend of Empatica Homework.
+
 
 ### How do I get set up? ###
 
@@ -16,15 +15,8 @@ This README would normally document whatever steps are necessary to get your app
 * How to run tests
 * Deployment instructions
 docker build -t empahomework .
-docker run -d -p <yourport>:8080
-
-### Contribution guidelines ###
-
-* Writing tests
-* Code review
-* Other guidelines
+docker run -d -p <PUBLICPORT>:8080 <IMAGENAME>
 
 ### Who do I talk to? ###
 
 * Repo owner or admin
-* Other community or team contact
