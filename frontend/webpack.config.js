@@ -61,9 +61,7 @@ module.exports = {
           .resource
           .indexOf(path.resolve(__dirname, 'client')) === -1;
       }
-    }),
-
-    new copy([{from: 'client/app/views/payments/notula.docx', to: 'downloads/'}])
+    })
   ]
 
 };

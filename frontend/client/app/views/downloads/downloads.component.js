@@ -1,6 +1,6 @@
-import template from './campaigns.html';
-import controller from './campaigns.controller';
-import './campaigns.scss';
+import template from './downloads.html';
+import controller from './downloads.controller';
+import './downloads.scss';
 
 const campaignsComponent = {
   bindings: {
