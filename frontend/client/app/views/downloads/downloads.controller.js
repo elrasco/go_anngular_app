@@ -10,10 +10,14 @@ class DownloadsController {
       map.setCenter(center);
 
       this.map = map;
+      this.dynMarkers = [];
+      this.markers.downloads.forEach(download => {
+        const latLng =new google.maps.LatLng(download.Latitude, download.Longitude);
+        this.dynMarkers.push(new google.maps.Marker({position:latLng}))
+      });
+      this.markerClusterer = new MarkerClusterer(map, this.dynMarkers, {});
     });
-
   }
-
 }
 
 export default DownloadsController;

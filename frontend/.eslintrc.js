@@ -18,7 +18,8 @@ module.exports = {
     'inject': true,
     'angular': true,
     'NgMap': true,
-    'google': true
+    'google': true,
+    'MarkerClusterer': true
   },
   "rules": {
     "indent": [
