@@ -1,0 +1,10 @@
+.DS_Store
+.tmp
+.git
+node_modules
+.settings
+*.log
+*.log.*
+dist/
+client/app/config/local.js
+worksheet.js

@@ -1,0 +1,47 @@
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: 'Quicksand', sans-serif!important;
+  font-weight: 500;
+
+}
+
+body {
+
+}
+
+app {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+input,
+button,
+select,
+textarea {
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+}
+
+.app {
+  height: 100%;
+  width: 100%;
+  &.page-login [ui-view] {
+    height: 100%;
+  }
+}
+
+.main-body {
+  min-height: calc(100vh - 4rem - 9.85rem); // padding-bottom: 4.5rem;
+}
+
+.font-small {
+  font-size: small;
+}

@@ -1,0 +1,4 @@
+<div class="app" ng-class="'page-' + $ctrl.getPageName()">
+    <navbar ng-if="$ctrl.shouldSeeNavbar()"></navbar>
+    <div class="main-body" ui-view></div>
+</div>
