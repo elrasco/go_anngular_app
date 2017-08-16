@@ -32,6 +32,18 @@ func (region EURegion) Whoami() string {
 	return "EU"
 }
 
+type ASIARegion struct{}
+
+//return a random position (latitude, longitude) in ASIA.
+//given this 2 coordinates: (27N, 57E) and (64N, 117E), it's easy to draw a rectangle inside EU
+func (region ASIARegion) Coordinate(r *rand.Rand) (float32, float32) {
+	return Randomcoo(27, 64, r), Randomcoo(57, 117, r)
+}
+
+func (region ASIARegion) Whoami() string {
+	return "ASIA"
+}
+
 //return a random float between min and max plus a value between [0, 1)
 func Randomcoo(min int, max int, r *rand.Rand) float32 {
 	return float32(r.Intn(max-min)+min) + r.Float32()
@@ -39,6 +51,6 @@ func Randomcoo(min int, max int, r *rand.Rand) float32 {
 
 //return a random region between US and Europe
 func ChooseARegion(r *rand.Rand) Region {
-	regions := []Region{USRegion{}, EURegion{}}
-	return regions[r.Intn(2)]
+	regions := []Region{USRegion{}, EURegion{}, ASIARegion{}}
+	return regions[r.Intn(3)]
 }

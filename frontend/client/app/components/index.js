@@ -1,8 +1,8 @@
 import angular from 'angular';
 
-import geoLocation from './geoLocation';
+import statistics from './statistics';
 
-const commonModuleName = angular.module('app.common', [geoLocation  ])
+const commonModuleName = angular.module('app.common', [statistics  ])
   .name;
 
 export default commonModuleName;

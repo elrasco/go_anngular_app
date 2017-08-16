@@ -8,7 +8,7 @@ import (
 func TestInitOK(t *testing.T) {
 	t.Log("should create the database")
 	var d = Downloads{}
-	if l := len(d.Init().downloads); l < 1000 {
+	if l := len(d.Init().downloads); l < 100 {
 		t.Errorf("Expected downloads big enough")
 	}
 }

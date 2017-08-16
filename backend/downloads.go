@@ -23,7 +23,7 @@ func (d Downloads) Find(start string, end string) []Download {
 	endAsTime, errEnd := time.Parse(layout, end)
 
 	if errStart != nil {
-		startAsTime = time.Now().AddDate(0, 0, -7)
+		startAsTime = time.Date(1970, 0, 0, 0, 0, 0, 0, time.UTC)
 	}
 
 	if errEnd != nil {
@@ -61,7 +61,7 @@ func (d Downloads) Filter(f func(Download) bool) []Download {
 //The moment of each download is within this year
 func (d *Downloads) Init() *Downloads {
 	r := rand.New(rand.NewSource(time.Now().UnixNano()))
-	for i := 0; i < 5000; i++ {
+	for i := 0; i < 300; i++ {
 		d.add(generateDownload(i, r))
 	}
 	return d
@@ -71,6 +71,7 @@ func (d *Downloads) add(download Download) {
 	d.downloads = append(d.downloads, download)
 }
 
+//return a Download struct with random lat, lon and downloaded_at (Locale.UTC)
 func generateDownload(id int, r *rand.Rand) Download {
 	var lat, lon = randcoordinate(r)
 	var downloaded_at = randate(r)
@@ -84,9 +85,8 @@ func randcoordinate(r *rand.Rand) (float32, float32) {
 
 //return a random Time within this Year (from now back)
 func randate(r *rand.Rand) time.Time {
-
-	var now = time.Now()
-	min := now.AddDate(0, 0, -365).Unix()
+	var now = time.Now().UTC()
+	min := now.AddDate(-1, 0, 0).Unix()
 	max := now.Unix()
 	delta := max - min
 
