@@ -17,6 +17,7 @@ type Download struct {
 	Downloaded_at time.Time `json:downloaded_at`
 }
 
+//return an array of Download, given an interval
 func (d Downloads) Find(start string, end string) []Download {
 	const layout = "2006-01-02"
 	startAsTime, errStart := time.Parse(layout, start)
@@ -27,7 +28,7 @@ func (d Downloads) Find(start string, end string) []Download {
 	}
 
 	if errEnd != nil {
-		endAsTime = time.Now()
+		endAsTime = time.Now().UTC()
 	}
 
 	return d.Filter(func(item Download) bool {
