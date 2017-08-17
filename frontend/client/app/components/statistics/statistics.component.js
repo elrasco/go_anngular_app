@@ -4,7 +4,8 @@ import './statistics.scss';
 
 const statisticsComponent = {
   bindings: {
-    markers: '<'
+    from: '<',
+    to: '<'
   },
   template,
   controller

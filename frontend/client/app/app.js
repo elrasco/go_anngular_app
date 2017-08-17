@@ -15,6 +15,7 @@ import Views from './views';
 import Components from './components';
 import AppComponent from './app.component';
 import Filters from './filters';
+import ngChart from 'angular-chart.js';
 
 angular
   .module('app', [
@@ -27,7 +28,8 @@ angular
     Views,
     Services,
     Components,
-    Filters
+    Filters,
+    ngChart
   ])
   .config(function($httpProvider) {
     "ngInject";

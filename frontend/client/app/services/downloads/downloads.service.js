@@ -1,7 +1,8 @@
 const downloadsService = function($http) {
   "ngInject";
   return {
-    get: (from, to) => $http({method: 'GET', url: 'http://localhost:8080/api/downloads', params: {from, to}}).then(result => result.data)
+    get: (from, to) => $http({ method: 'GET', url: 'http://localhost:8080/api/downloads', params: { from, to } }).then(result => result.data),
+    statistics: (from, to) => $http({ method: 'GET', url: 'http://localhost:8080/api/statistics', params: { from, to } }).then(result => result.data),
   };
 };
 
