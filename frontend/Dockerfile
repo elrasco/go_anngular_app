@@ -4,7 +4,7 @@ FROM sinet/nginx-node:latest
 COPY . /usr/src/app
 WORKDIR /usr/src/app
 
-RUN rm -rf node_modules\
+RUN rm -rf node_modules \
     && npm install \
     && npm run build:prod
 
