@@ -76,7 +76,6 @@
   "scripts": {
     "start": "gulp --max_old_space_size=2000",
     "build:dev": "better-npm-run build:dev",
-    "build:stage": "better-npm-run build:stage",
     "build:prod": "better-npm-run build:prod",
     "test": "better-npm-run test",
     "test:ci": "better-npm-run test:ci"
@@ -86,6 +85,12 @@
       "command": "gulp webpack",
       "env": {
         "NODE_ENV": "development"
+      }
+    },
+    "build:prod": {
+      "command": "gulp webpack",
+      "env": {
+        "NODE_ENV": "production"
       }
     },
     "test": {

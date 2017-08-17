@@ -17,6 +17,8 @@ import AppComponent from './app.component';
 import Filters from './filters';
 import ngChart from 'angular-chart.js';
 
+import config from './config';
+
 angular
   .module('app', [
     uiRouter,
@@ -31,6 +33,9 @@ angular
     Filters,
     ngChart
   ])
+  .run(() => {
+    console.log(config);
+  })
   .config(function($httpProvider) {
     "ngInject";
     $httpProvider.defaults.withCredentials = true;
