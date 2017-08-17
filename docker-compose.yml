@@ -1,0 +1,10 @@
+services:
+    frontend:
+        image: frontend
+        ports:
+            - 85:8080
+        restart: always
+ 
+    backend:
+        image: backend
+        restart: always
