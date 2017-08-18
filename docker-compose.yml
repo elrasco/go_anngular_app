@@ -6,3 +6,5 @@ services:
             - "85:80"
     backend:
         build: backend
+		depends_on:
+			- frontend
