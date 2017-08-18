@@ -11,13 +11,13 @@ type Downloads struct {
 }
 
 type Download struct {
-	App_id        string    `json:id`
-	Latitude      float32   `json:latitude`
-	Longitude     float32   `json:longitude`
-	Downloaded_at time.Time `json:downloaded_at`
+	App_id        string
+	Latitude      float32
+	Longitude     float32
+	Downloaded_at time.Time
 }
 
-//return an array of Download, given an interval
+//Find return an array of Download, given an interval
 func (d Downloads) Find(start string, end string) []Download {
 	const layout = "2006-01-02"
 	startAsTime, errStart := time.Parse(layout, start)
@@ -36,6 +36,7 @@ func (d Downloads) Find(start string, end string) []Download {
 	})
 }
 
+//HasBeenDownloadeWithin given an interval of time and a download , returns true if the download has been downloaded in a such interval, false otherwise
 func (d Download) HasBeenDownloadeWithin(start time.Time, end time.Time) bool {
 	return d.HasBeenDownloadeBefore(end) && d.HasBeenDownloadeAfter(start)
 }
@@ -75,12 +76,12 @@ func (d *Downloads) add(download Download) {
 //return a Download struct with random lat, lon and downloaded_at (Locale.UTC)
 func generateDownload(id int, r *rand.Rand) Download {
 	var lat, lon = randcoordinate(r)
-	var downloaded_at = randate(r)
-	return Download{strconv.Itoa(id + 1), lat, lon, downloaded_at}
+	var downloadedAt = randate(r)
+	return Download{strconv.Itoa(id + 1), lat, lon, downloadedAt}
 }
 
 func randcoordinate(r *rand.Rand) (float32, float32) {
-	var randomRegion Region = ChooseARegion(r)
+	var randomRegion = ChooseARegion(r)
 	return randomRegion.Coordinate(r)
 }
 

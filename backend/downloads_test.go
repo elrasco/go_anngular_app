@@ -110,7 +110,7 @@ func TestHasBeenDownloadeWithinOK(t *testing.T) {
 	var d = Download{"1", 90.124, 290.00, downloaded_at}
 
 	if hasBeenDownloadeWithin := d.HasBeenDownloadeWithin(start, end); !hasBeenDownloadeWithin {
-		t.Errorf("Expected %s between %s and ", d.Downloaded_at, start, end)
+		t.Errorf("Expected %s between %s and %s", d.Downloaded_at, start, end)
 	}
 }
 
