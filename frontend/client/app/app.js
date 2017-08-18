@@ -34,7 +34,7 @@ angular
     ngChart
   ])
   .run(() => {
-    console.log(config);
+    //console.log(config);
   })
   .config(function($httpProvider) {
     "ngInject";

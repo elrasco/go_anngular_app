@@ -1,4 +1,4 @@
-//should get statistics and show them
+//should get statistics
 //should reload statistics on change interval
 
 describe('PasswordController', function() {
@@ -10,4 +10,7 @@ describe('PasswordController', function() {
     // The injector unwraps the underscores (_) from around the parameter names when matching
     $controller = _$controller_;
   }));
+
+
+
 });

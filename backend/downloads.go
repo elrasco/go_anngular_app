@@ -58,11 +58,11 @@ func (d Downloads) Filter(f func(Download) bool) []Download {
 	return choosen
 }
 
-//Init initialize the set of downloads with 10000 items.
+//Init initialize the set of downloads with 1000 items.
 //The moment of each download is within this year
 func (d *Downloads) Init() *Downloads {
 	r := rand.New(rand.NewSource(time.Now().UnixNano()))
-	for i := 0; i < 300; i++ {
+	for i := 0; i < 1000; i++ {
 		d.add(generateDownload(i, r))
 	}
 	return d
