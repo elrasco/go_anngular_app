@@ -12,10 +12,10 @@ This repository contains both backend and frontend of Empatica Homework.
 * Summary of set up
 * Configuration
 * Dependencies
+  You need docker-compose
 * How to run tests
 * Deployment instructions
-docker build -t empahomework .
-docker run -d -p <PUBLICPORT>:8080 <IMAGENAME>
+* docker-compose up -d
 
 ### Who do I talk to? ###
 
