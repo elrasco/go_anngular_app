@@ -4,8 +4,9 @@ FROM sinet/nginx-node:latest
 COPY . /usr/src/app
 WORKDIR /usr/src/app
 
+RUN apt-get install yarn
 RUN rm -rf node_modules \
-    && npm install \
+    && yarn install \
     && npm run build:prod
 
 COPY default.conf /etc/nginx/conf.d/
