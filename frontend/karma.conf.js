@@ -1,18 +1,18 @@
 const precss = require('precss');
 const autoprefixer = require('autoprefixer');
-const frameworksNotIncludingTestHearness = ['mocha'];
 const pluginsNotIncludingTestHearness = [
   'karma-chrome-launcher',
   'karma-mocha',
   'karma-mocha-reporter',
   'karma-sourcemap-loader',
-  'karma-webpack'
+  'karma-webpack',
+  'karma-chai'
 ];
 
 module.exports = function(config) {
   config.set({
     basePath: '.',
-    frameworks: frameworksNotIncludingTestHearness,
+    frameworks: ['mocha', 'chai'],
     files: [{ pattern: 'spec.bundle.js' }],
     client: {
       chai: {
@@ -24,8 +24,7 @@ module.exports = function(config) {
     webpack: {
       devtool: 'inline-source-map',
       module: {
-        loaders: [
-          {
+        loaders: [{
             test: /\.js$/,
             exclude: [
               /app\/lib/, /node_modules/,

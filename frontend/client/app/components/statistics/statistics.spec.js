@@ -1,7 +1,7 @@
 //should get statistics
 //should reload statistics on change interval
 
-describe('PasswordController', function() {
+/* describe('PasswordController', function() {
   beforeEach(module('app'));
 
   var $controller;
@@ -13,4 +13,4 @@ describe('PasswordController', function() {
 
 
 
-});
+}); */
