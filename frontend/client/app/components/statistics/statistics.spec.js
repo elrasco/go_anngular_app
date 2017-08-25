@@ -1,5 +1,6 @@
-//should get statistics
-//should reload statistics on change interval
+//should show 4 statistic
+//if click show I've to see stats #stats-container
+//if click hide I've not to see stats #stats-container
 
 /* describe('PasswordController', function() {
   beforeEach(module('app'));

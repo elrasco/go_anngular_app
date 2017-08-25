@@ -1,3 +1,5 @@
+//here we define the component
+
 import template from './statistics.html';
 import controller from './statistics.controller';
 import './statistics.scss';

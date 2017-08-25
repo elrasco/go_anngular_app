@@ -1,7 +1,7 @@
 <div class="statistics">
-  <md-button ng-click="$ctrl.toggleViewable()" ng-hide="$ctrl.viewable">View Statistics</md-button>
-  <md-button ng-click="$ctrl.toggleViewable()" ng-show="$ctrl.viewable">Hide Statistics</md-button>
-  <md-content ng-show="$ctrl.viewable">
+  <md-button ng-click="$ctrl.toggleViewable()" ng-show="$ctrl.viewable" id="hide-stats-btn">Hide Statistics</md-button>
+  <md-button ng-click="$ctrl.toggleViewable()" ng-hide="$ctrl.viewable" id="show-stats-btn">View Statistics</md-button>
+  <md-content ng-show="$ctrl.viewable" id="stats-container">
     <statistic title="By country" chartdata="$ctrl.chartdata.ByCountry" chartlabels="$ctrl.chartlabels.ByCountry"></statistic>
     <div layout="row">
       <statistic title="By moment in the day" chartdata="$ctrl.chartdata.ByTime" chartlabels="$ctrl.chartlabels.ByTime"></statistic>

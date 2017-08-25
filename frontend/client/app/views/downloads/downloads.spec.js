@@ -1,6 +1,5 @@
 // should call the downloads service
-// should build the component
-// show the map and have markers
+// show the map
 // should show statistics
 
 import '../../app.js';
@@ -23,8 +22,6 @@ describe('downloads view', function() {
     parentScope = _$rootScope_.$new();
     parentScope.markers = [];
     component = $compile('<downloads markers="markers"></downloads>')(parentScope);
-    //parentScope.$digest();
-
     $httpBackend.whenGET(new RegExp('/api/statistics'))
       .respond({ statistics: {} });
   }));
@@ -37,13 +34,11 @@ describe('downloads view', function() {
     $httpBackend.flush();
     return expectation;
   });
-  it('should build the component', () => {
-
-    parentScope.markers = [{ App_id: "1", Latitude: 33.165085, Longitude: 72.63186, Downloaded_at: "2017-07-26T23:18:13Z" }];
-
-    parentScope.$digest();
-
+  it('should show statistics', () => {
     expect(component.html()).contain('statistics');
+  });
 
+  it('should show the map', () => {
+    expect(component.html()).contain('ng-map');
   });
 });

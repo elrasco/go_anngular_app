@@ -1,3 +1,5 @@
+//here we define the module and load the component definition
+
 import angular from 'angular';
 import statisticsComponent from './statistics.component';
 
