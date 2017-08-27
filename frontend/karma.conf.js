@@ -6,13 +6,14 @@ const pluginsNotIncludingTestHearness = [
   'karma-mocha-reporter',
   'karma-sourcemap-loader',
   'karma-webpack',
-  'karma-chai'
+  'karma-chai',
+  'karma-sinon-chai'
 ];
 
 module.exports = function(config) {
   config.set({
     basePath: '.',
-    frameworks: ['mocha', 'chai'],
+    frameworks: ['mocha', 'sinon-chai'],
     files: [{ pattern: 'spec.bundle.js' }],
     client: {
       chai: {

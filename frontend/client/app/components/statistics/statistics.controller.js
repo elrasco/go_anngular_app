@@ -12,15 +12,24 @@ class StatisticsController {
   $onChanges(changes) {
     this.downloads.statistics(this.from, this.to)
       .then(stat => {
-        this.statistics = stat;
 
+        console.log('changes', changes);
+        this.statistics = stat;
+        console.log('statistics', this.statistics);
         Object.keys(this.statistics.statistics).forEach(key => {
-          this.chartdata[key] = [Object.values(this.statistics.statistics[key])];
-          this.chartlabels[key] = Object.keys(this.statistics.statistics[key]);
+          this.setChartDataWith(key, Object.values(this.statistics.statistics[key]));
+          this.setLabelDataWith(key, Object.keys(this.statistics.statistics[key]));
         });
 
-
       });
+  }
+
+  setChartDataWith(key, values) {
+    this.chartdata[key] = [values];
+  }
+
+  setLabelDataWith(key, values) {
+    this.chartlabels[key] = values;
   }
 
   toggleViewable() {
