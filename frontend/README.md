@@ -16,13 +16,15 @@ Along apart the angular application, the project contains also the configuration
 6. Multi environment configuration
 
 #### Build and Test
+`npm run build:dev` will build and create the distribution with a configuration suited for a development environment (see __Configuration__ for details).  
+`npm run build:prod` will build create the distribution with a configuration suited for a production environment (see __Configuration__ for details).  
+The `dist` folder will contain the distribution.  
+
 ##### Development
-`npm run build:dev` will create the distribution with a configuration suited for a development environment (see __Configuration__ for details).  
-`npm run build:prod` will create the distribution with a configuration suited for a production environment (see __Configuration__ for details).  
-The `dist` folder will contain the distribution.
+`npm run` to run locally.  
 
 ##### Test
-`npm test` will execute all the test.
+`npm test` will execute all the test.  
 
 #### Steps for getting up and running (with docker)
 1. Build the image
@@ -56,8 +58,8 @@ The `server` folder contains the Nginx server configuration will be used by Dock
 The `client` contained the angular application application (Html, javascript, css)
 
 ###### Everything is a component
-This is a component based application, this means that I followed the component pattern as defined in https://docs.angularjs.org/guide/component  
-The `app` component is the root component and you can find his definition spread out across the files: 
+This is a component based application, this means that I followed the component pattern as defined in https://docs.angularjs.org/guide/component    
+The `<app>` component is the root component and you can find his definition spread out across the files:   
 1. `client/app.component.js` is the component definition
 2. `client/app.controller.js` is the controller
 3. `client/app.scss` 
@@ -66,14 +68,14 @@ The `app` component is the root component and you can find his definition spread
 
 __Let's take a pause...__  
 Basically, in the application, I used 2 different type of component: the one you can find in the __view__ folder and the one in the __component__ folder.  
-The first one are connected with routing; this means that the url http://localhost:85/downloads will show what you wrote in the `__views/downloads__` folder.  
+The first one are connected with routing; this means that the url http://localhost:85/downloads will show what you wrote in the `views/downloads` folder.  
 The second one are the "more ordinary" component, the one you can use within views or other components.  
 In this way we can can take isolated style, controller, html and test for each component. 
 Check out already defined component to create new ones.
 
 
 __Let's continue with the folder...__  
-`client/index.html` is the page will be served. This file use the root component `<app></app>`.
+`client/index.html` is the page will be served. This file use the root component `<app></app>`.  
 `client/components/index.js` this file is in charge to load into the application the component modules. This means that if create a new compoent we have to update this file.   
-`client/config` contains the configurations for the different environment
-`client/services` contains the services the application
+`client/config` contains the configurations for the different environment.  
+`client/services` contains the services the application.  
