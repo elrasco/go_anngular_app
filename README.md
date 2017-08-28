@@ -4,6 +4,8 @@ This README documents the necessary steps to get the empatica homework get up an
 ### What is this repository for? ###
 
 This repository contains both backend and frontend of Empatica Homework.  
+You can find frontend application in frontend folder and the backend application in the backend folder.   
+
 This solution can be deployed as multi container docker application, this means that you can use doccker-compose tool to get it up and running.   
 You can deploy without docker as well (check the READMEs of the single projects).
 
