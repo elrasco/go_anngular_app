@@ -26,7 +26,8 @@ For the details of each projects you can refer to the READMEs file of the projec
 `cd empa_homework`
 
 3. run the solution
-`docker-compose up -d`
+`docker-compose up -d`  
+to reload use `docker-compose up -d --no-deps --build`
 
 4. go to http://localhost:85
 
