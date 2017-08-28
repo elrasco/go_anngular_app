@@ -28,10 +28,10 @@ cd $GOPATH/src/backeand_app
 `backeand_app`
 
 #### Steps for getting up and running (with docker)
-Build the image
-docker build -t --name empatica_backend . 
-Run the container
-docker run -d -p 8080:8080 empatica_backend
+1. Build the image
+`docker build -t --name empatica_backend .`
+2. Run the container   
+`docker run -d -p 8080:8080 empatica_backend`
 
-http://localhost:8080/api/downloads
+http://localhost:8080/api/downloads   
 htpp://localhost:8080/api/statistics
