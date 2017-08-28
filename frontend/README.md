@@ -6,7 +6,6 @@ This is the frontend of empatica homework.
 The frontend is written in angularjs 1.6 with ECMA6 syntax
 Along apart the angular application, the project contains also the configuration for the nginx server supposed to serve
 
-
 #### Features
 1. Bundled with webpack
 2. ECMA6 syntax, compiled by Babel
@@ -20,7 +19,7 @@ Along apart the angular application, the project contains also the configuration
 ##### Development
 `npm run build:dev` will create the distribution with a configuration suited for a development environment (see __Configuration__ for details).  
 `npm run build:prod` will create the distribution with a configuration suited for a production environment (see __Configuration__ for details).  
-The dist folder will containd the distribution.
+The `dist` folder will contain the distribution.
 
 ##### Test
 `npm test` will execute all the test.
@@ -48,17 +47,32 @@ This file affect the configuration only when you run `npm run build:dev`
 
 #### Development
 1. install nodejs (v6.11.2) + npm (v3.10.10)
-2. `npm install`
-3. `npm test`
+2. `npm install` to install all the dependencies
+3. `npm test` to run the test 
 4. `npm run` to run locally 
-
-##### Everything is a component
-This is a component based application, this means that I followed the component pattern as defined in https://docs.angularjs.org/guide/component  
-The app component is the root component.
 
 ##### Folder structure
 The `server` folder contains the Nginx server configuration will be used by Docker in order to run the frontend application.
 The `client` contained the angular application application (Html, javascript, css)
-The `client/index.html` is the page will be served. This file contains the root component (app).
-The `client/app.html` is the page will be served
-The `client/app.js` load all the module (external and not) required by the application and define the app component
+
+###### Everything is a component
+This is a component based application, this means that I followed the component pattern as defined in https://docs.angularjs.org/guide/component  
+The `app` component is the root component and you can find his definition spread out across the files: 
+1. `client/app.component.js` is the component definition
+2. `client/app.controller.js` is the controller
+3. `client/app.scss` 
+4. `client/app.html` is the template 
+5. `client/app.js` load the module that define the component (the last line of the code). Actually this file load all the module required by the application
+
+__Let's take a pause...__
+Basically, in the application, I used 2 different type of component: the one you can find in the __view__ folder and the one in the __component__ folder.  
+The first one are connected with routing; this means that the url http://localhost:85/downloads will show what you wrote in the `__views/downloads__` folder.  
+The second one are the "more ordinary" component, the one you can use within views or other components.  
+Check out already defined component to create new ones.
+
+
+__Let's continue with the folder...__
+`client/index.html` is the page will be served. This file use the root component `<app></app>`.
+`client/components/index.js` this file is in charge to load into the application the component modules. This means that if create a new compoent we have to update this file.   
+`client/config` contains the configurations ofr the different environment
+`client/config` contains the configurations ofr the different environment
