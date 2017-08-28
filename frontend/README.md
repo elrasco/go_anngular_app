@@ -64,15 +64,16 @@ The `app` component is the root component and you can find his definition spread
 4. `client/app.html` is the template 
 5. `client/app.js` load the module that define the component (the last line of the code). Actually this file load all the module required by the application
 
-__Let's take a pause...__
+__Let's take a pause...__  
 Basically, in the application, I used 2 different type of component: the one you can find in the __view__ folder and the one in the __component__ folder.  
 The first one are connected with routing; this means that the url http://localhost:85/downloads will show what you wrote in the `__views/downloads__` folder.  
 The second one are the "more ordinary" component, the one you can use within views or other components.  
+In this way we can can take isolated style, controller, html and test for each component. 
 Check out already defined component to create new ones.
 
 
-__Let's continue with the folder...__
+__Let's continue with the folder...__  
 `client/index.html` is the page will be served. This file use the root component `<app></app>`.
 `client/components/index.js` this file is in charge to load into the application the component modules. This means that if create a new compoent we have to update this file.   
-`client/config` contains the configurations ofr the different environment
-`client/config` contains the configurations ofr the different environment
+`client/config` contains the configurations for the different environment
+`client/services` contains the services the application
