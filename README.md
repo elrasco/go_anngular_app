@@ -33,9 +33,6 @@ This is a single page application composed by a front-end application and a api 
 The front end side is served by an nginx server that acts as proxy to the api backend. In this way I can call the api using relative url without paying attention to cors problem.    
 For the homework I choose to not use database because, imho, it wasn't so important. Of course I would choose one in a real application.   
 
-##### Deployment
-The whole project is dockerizable.
-
 ##### Expansion
 In order to fullfill the real time requirement, the first options I can see is to create a comminication channel from server to the client, this means that as soon as a change happens, clients will be noticed about it.  
 In this scenario the WebSocket techonlogy can help us implementing this solutions.  
