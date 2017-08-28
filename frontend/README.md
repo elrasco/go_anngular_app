@@ -1,37 +1,64 @@
 # README #
-This README would normally document whatever steps are necessary to get your application up and running.
+This README documents the necessary steps to get your application up and running.  
 
 ### What is this repository for? ###
-This is the backend of empatica homework. 
-The backend is written in GO using the standard libray plus gin and gin-cors libraries for rest call handling. 
+This is the frontend of empatica homework. 
+The frontend is written in angularjs 1.6 with ECMA6 syntax
+Along apart the angular application, the project contains also the configuration for the nginx server supposed to serve
 
-The purpose of the project is to expose 2 calls in order to let the frontend access "informations" about the downloads of app: 
-1. GET /api/downloads?from=YYYY-MM-DD&to=YYYY-MM-DD
-This call returns the list of the downloaded mobile app within a interval. from e to are not mandatory 
-2. GET /api/statistics?from=YYYY-MM-DD&to=YYYY-MM-DD
-This call returns the statistics of the downloaded mobile app within a interval. from e to are not mandatory
 
-#### Steps for getting up and running (if you don't have docker)
+#### Features
+1. Bundled with webpack
+2. ECMA6 syntax, compiled by Babel
+2. Test written with mocha-chai syntax
+3. Test executed Karma Test Runner
+4. Support for sass template
+5. Hot module replacement plugin (you can see changes without stopping the server)
+6. Multi environment configuration
 
-##### You need to install GO to run the solution outsite docker.   
+#### Build and Test
+##### Development
+`npm run build:dev` will create the distribution with a configuration suited for a development environment (see ______Configuration______ for details).  
+`npm run build:prod` will create the distribution with a configuration suited for a production environment (see ______Configuration______ for details).  
+The dist folder will containd the distribution.
 
-1. copy the application in your GOPATH folder
-`mkdir $GOPATH/src/backeand_app;
-cp . $GOPATH/src/backeand_app`
-2. stay into the application workdir
-cd $GOPATH/src/backeand_app
-3. get the dependencies
-`go get`
-4. install
-`go install`
-5. run
-`backeand_app`
+##### Test
+`npm test` will execute all the test.
 
 #### Steps for getting up and running (with docker)
-Build the image
-docker build -t --name empatica_backend . 
-Run the container
-docker run -d -p 8080:8080 empatica_backend
+1. Build the image
+`docker build -t --name empatica_frontend .` 
+2. Run the container
+`docker run -d -p 85:80 empatica_frontend`
 
-http://localhost:8080/api/downloads
-htpp://localhost:8080/api/statistics
+#### Configuration
+This is the frontend side of a single page web application, this means it supposed to have access to a backend service.
+The location of this service can be easily configured setting the property API_URL.  
+  
+##### client/config/local.js
+This file contains the configuration of your local development.   
+Create the file and add the API_URL property if you want to change the behavioour defined in client/config/development.js file. 
+This file will affect the configuration only when you launch the application with `npm start` (your local development)  
+
+##### client/config/production.js
+This file affect the configuration only when you run `npm run build:prod` 
+
+##### client/config/development.js
+This file affect the configuration only when you run `npm run build:dev` 
+
+#### Development
+1. install nodejs (v6.11.2) + npm (v3.10.10)
+2. `npm install`
+3. `npm test`
+4. `npm run` to run locally 
+
+##### Everything is a component
+This is a component based application, this means that I followed the component pattern as defined in https://docs.angularjs.org/guide/component  
+The app component is the root component.
+
+##### Folder structure
+The `server` folder contains the Nginx server configuration will be used by Docker in order to run the frontend application.
+The `client` contained the angular application application (Html, javascript, css)
+The `client/index.html` is the page will be served. This file contains the root component (app).
+The `client/app.html` is the page will be served
+The `client/app.js` load all the module (external and not) required by the application and define the app component
