@@ -9,18 +9,14 @@ class StatisticsController {
     this.chartlabels = {};
   }
 
-  $onChanges(changes) {
+  $onChanges() {
     this.downloads.statistics(this.from, this.to)
       .then(stat => {
-
-        console.log('changes', changes);
         this.statistics = stat;
-        console.log('statistics', this.statistics);
         Object.keys(this.statistics.statistics).forEach(key => {
           this.setChartDataWith(key, Object.values(this.statistics.statistics[key]));
           this.setLabelDataWith(key, Object.keys(this.statistics.statistics[key]));
         });
-
       });
   }
 
