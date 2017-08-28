@@ -7,8 +7,8 @@ The backend is written in GO using the standard libray plus gin and gin-cors lib
 
 The purpose of the project is to expose 2 calls in order to let the frontend access "informations" about the downloads of app:   
 1. `GET /api/downloads?from=YYYY-MM-DD&to=YYYY-MM-DD`  
-This call returns the list of the downloaded mobile app within a interval. from e to are not mandatory 
-2. `GET /api/statistics?from=YYYY-MM-DD&to=YYYY-MM-DD`
+This call returns the list of the downloaded mobile app within a interval. from e to are not mandatory   
+2. `GET /api/statistics?from=YYYY-MM-DD&to=YYYY-MM-DD`  
 This call returns the statistics of the downloaded mobile app within a interval. from e to are not mandatory
 
 #### Steps for getting up and running (if you don't have docker)
