@@ -34,4 +34,4 @@ cd $GOPATH/src/backeand_app
 `docker run -d -p 8080:8080 empatica_backend`
 
 http://localhost:8080/api/downloads   
-htpp://localhost:8080/api/statistics
+http://localhost:8080/api/statistics
