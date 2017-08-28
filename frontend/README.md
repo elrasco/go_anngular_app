@@ -18,8 +18,8 @@ Along apart the angular application, the project contains also the configuration
 
 #### Build and Test
 ##### Development
-`npm run build:dev` will create the distribution with a configuration suited for a development environment (see ______Configuration______ for details).  
-`npm run build:prod` will create the distribution with a configuration suited for a production environment (see ______Configuration______ for details).  
+`npm run build:dev` will create the distribution with a configuration suited for a development environment (see __Configuration__ for details).  
+`npm run build:prod` will create the distribution with a configuration suited for a production environment (see __Configuration__ for details).  
 The dist folder will containd the distribution.
 
 ##### Test
@@ -34,7 +34,7 @@ The dist folder will containd the distribution.
 #### Configuration
 This is the frontend side of a single page web application, this means it supposed to have access to a backend service.
 The location of this service can be easily configured setting the property API_URL.  
-  
+
 ##### client/config/local.js
 This file contains the configuration of your local development.   
 Create the file and add the API_URL property if you want to change the behavioour defined in client/config/development.js file. 
