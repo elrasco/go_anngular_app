@@ -14,6 +14,8 @@ type Statistics struct {
 	ByMonth   map[string]int
 }
 
+//getStatistics build the statistics of the downloads.
+//in order to provide country informations, this method use an offline georeverse module (georeverse.NewCountryReverser).
 func (d Downloads) getStatistics(start string, end string) Statistics {
 	dataPath := "./data/polygons.properties"
 	g, err := georeverse.NewCountryReverser(dataPath)
@@ -32,6 +34,8 @@ func (d Downloads) getStatistics(start string, end string) Statistics {
 	return s
 }
 
+//setByCountry set the country code given latitude and longitude of a location.
+//
 func (s *Statistics) setByCountry(d Download, g *georeverse.CountryReverser) {
 	if country := g.GetCountryCode(float64(d.Longitude), float64(d.Latitude)); len(country) > 0 {
 		s.ByCountry[country] = s.ByCountry[country] + 1
