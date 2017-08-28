@@ -3,8 +3,8 @@ This README documents the necessary steps to get your application up and running
 
 ### What is this repository for? ###
 This is the backend of empatica homework. 
-The backend is written in GO using the standard libray plus gin and gin-cors libraries for rest call handling.  
-I used an offline country reverse geocoder (github.com/AsGz/geo/georeverse). 
+You can find frontend application in frontenf folder and the backend application in the backend folder.   
+The backend is written in GO using the standard libray plus gin and gin-cors libraries for rest call handling. I used an offline country reverse geocoder (github.com/AsGz/geo/georeverse). 
 
 The purpose of the project is to expose 2 calls in order to let the frontend access "informations" about the downloads of app:   
 1. `GET /api/downloads?from=YYYY-MM-DD&to=YYYY-MM-DD`  
