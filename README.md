@@ -39,9 +39,3 @@ For the homework I choose to not use database because, imho, it wasn't so import
 ##### Expansion
 In order to fullfill the real time requirement, the first options I can see is to create a comminication channel from server to the client, this means that as soon as a change happens, clients will be noticed about it.  
 In this scenario the WebSocket techonlogy can help us implementing this solutions.  
-
-##### Final consideration 
-I want to conclude this funny excercise with a personal consideration about the difficulties I faced to write it.  
-I choose golang for the backend. I never wrote code in go. I liked it, but I payed (in term of time) in learning a new language.   
-On the other side, for the front end, I choose angularjs as js framework. I have been using angularjs since almost 3 years. And I choose to use a boilerplate I developed in these years (actually I got it lighter). Easy to code the application. Hard to explain waht I did and how to use it!!   
-That's it!!!   
